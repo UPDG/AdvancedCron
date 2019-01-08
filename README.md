@@ -1,4 +1,5 @@
 # Advanced Cron
+[![Build Status](https://travis-ci.org/UPDG/AdvancedCron.svg?branch=master)](https://travis-ci.org/UPDG/AdvancedCron)
 
 Advanced cron scheduler written in Golang and compatible with Linux and Mac.
 
@@ -119,3 +120,7 @@ not be run!
 - [ ] Fix daylight-savings leap-ahead transitions
 - [ ] Configure user and group to run job
 - [ ] Windows support
+
+## Credits
+
+Scheduler is based on https://github.com/robfig/cron (additional functionality added).
