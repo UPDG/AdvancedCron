@@ -2,6 +2,7 @@ package main
 
 import (
 	"cron/cron"
+	"cron/utils"
 	"flag"
 	"fmt"
 	"github.com/fsnotify/fsnotify"
@@ -11,7 +12,6 @@ import (
 	"github.com/spf13/viper"
 	"log"
 	"os"
-	"os/exec"
 	"time"
 )
 
@@ -73,7 +73,7 @@ func runCron() {
 			logTime := time.Now().Local().Format("2006-01-02 15:04:05")
 
 			timeBefore := time.Now()
-			out, jobErr := exec.Command("/bin/sh", "-c", task.Command).Output()
+			out, jobErr := utils.RunCMD(task.Command, task.User)
 			elapsedTime := time.Now().Sub(timeBefore)
 			if jobErr != nil {
 				raven.CaptureErrorAndWait(jobErr, map[string]string{"command": task.Command, "time": task.Time})

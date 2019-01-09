@@ -30,6 +30,7 @@ tasks:
     command: "echo 'Runs at 04:30 Tokyo time every day'"
   - name: 'Job 4'
     time: '@hourly'
+    user: 'apache'
     command: "echo 'Every hour'"
   - name: 'Job 5'
     time: '@every 1h13m16s'
@@ -37,7 +38,7 @@ tasks:
     output: './log.log'
 ```
 
-`name`, `time` and `command` are required. `output` is optional.
+`name`, `time` and `command` are required. `user` and `output` is optional.
 
 _Note: if output not set system will not log results at all_
 
@@ -114,12 +115,6 @@ at the beginning of the cron spec, of the form "TZ=Asia/Tokyo"
 
 Be aware that jobs scheduled during daylight-savings leap-ahead transitions will
 not be run!
-
-## Todo
-
-- [ ] Fix daylight-savings leap-ahead transitions
-- [ ] Configure user and group to run job
-- [ ] Windows support
 
 ## Credits
 
