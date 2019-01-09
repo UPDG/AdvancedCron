@@ -4,7 +4,7 @@
 Advanced cron scheduler written in Golang and compatible with Linux and Mac.
 
 Advantages
-* Compatible with legacy fron files
+* Compatible with legacy cron files
 * Ability to create tasks for every second, not minute as default
 * Ability to log output for each job individually
 * Ability to choose different shell for each job
