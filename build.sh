@@ -34,4 +34,4 @@ if [ "$1" == "all" ]; then
 	exit
 fi
 
-CGO_ENABLED=0 go build -o "$OD/acron" .
+CGO_ENABLED=1 go build -o "$OD/acron" .
