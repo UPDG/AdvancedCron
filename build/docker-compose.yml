@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  builder:
+    image: karalabe/xgo-1.11.1
+    volumes:
+      - ../:/app
+    working_dir: /app
+    entrypoint: /bin/bash
+
+    
