@@ -232,6 +232,17 @@ func (c *Cron) Location() *time.Location {
 	return c.location
 }
 
+func (c *Cron) SetLocation(tz *time.Location) error {
+	if c.running {
+		return fmt.Errorf("you have to stop cron first")
+	}
+	if len(c.entries) > 0 {
+		return fmt.Errorf("you have to clean cron first (cant change location after job added)")
+	}
+	c.location = tz
+	return nil
+}
+
 // Start the cron scheduler in its own go-routine, or no-op if already started.
 func (c *Cron) Start() {
 	if c.running {

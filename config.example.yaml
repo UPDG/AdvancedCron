@@ -1,0 +1,31 @@
+# Advanced Cron configuration file
+# Full documentation can be found at https://github.com/UPDG/AdvancedCron
+
+# User to run from for all task if not in task
+user: 'root'
+
+# Shell to run from for all task if not in task
+shell: '/bin/bash'
+
+# Timezone for all tasks if not in task
+timezone: America/Los_Angeles
+
+# List of tasks to run
+tasks:
+    # Name of task. Must be unique.
+  - name: 'Job 1'
+
+    # Schedule of task.
+    time: '30 * * * *'
+
+    # User to run from
+    user: 'root'
+
+    # Shell to run job
+    shell: '/bin/sh'
+
+    # Job command to run
+    command: "echo 'Every hour at 30 minutes'"
+
+    # File for command output log
+    output: './log.log'

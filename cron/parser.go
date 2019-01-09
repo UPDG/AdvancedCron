@@ -241,6 +241,6 @@ func parseDescriptor(spec string, loc *time.Location) Schedule {
 		return Every(duration)
 	}
 
-	log.Panicf("Unrecognized descriptor: %s", spec)
+	log.Printf("Unrecognized descriptor: %s", spec)
 	return nil
 }
